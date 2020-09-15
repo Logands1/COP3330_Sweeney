@@ -1,10 +1,13 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Encrypter {
 
-    public void encrypt(String number) {
-       stringConvert(number);
-
+    public String encrypt(String number) {
+        int[] intNumArr = stringConvert(number);
+        int[] numArr = encryptor(intNumArr);
+        String intString = arrString(numArr);
+        return intString;
 
     }
 
@@ -23,7 +26,7 @@ public class Encrypter {
     }
 
     //Converts the String into an int array
-    public void stringConvert(String number) {
+    public int[] stringConvert(String number) {
         int i;
 
         char[] numArr = number.toCharArray();
@@ -35,11 +38,12 @@ public class Encrypter {
         for (i = 0; i < intNumArr.length; i++) {
             intNumArr[i] = (intNumArr[i] + 7);
         }
-        encryptor(intNumArr);
+        //encryptor(intNumArr);
+        return intNumArr;
     }
 
     //Encrypts the given number
-    public void encryptor(int[] numArr){
+    public int[] encryptor(int[] numArr){
         int i, temp;
 
         for(i = 0; i < numArr.length; i++){
@@ -52,6 +56,37 @@ public class Encrypter {
             numArr[i] = numArr[i+2];
             numArr[i+2] = temp;
         }
-        arrString(numArr);
+        //String intString = arrString(numArr);
+
+        //System.out.print(intString);
+        return numArr;
     }
 }
+/*
+class Main {
+    public Main() {
+    }
+
+    public static void main(String[] args) {
+        Encrypter encryptor = new Encrypter();
+        Decrypter decryptor = new Decrypter();
+        System.out.println("Encrypt or Decrypt? ");
+        Scanner scan = new Scanner(System.in);
+        String selection = scan.next();
+        String number;
+        if (selection.equals("Encrypt")) {
+            System.out.print("Enter in 4 digit number: ");
+            number = scan.next();
+            encryptor.encrypt(number);
+        }
+
+        if (selection.equals("Decrypt")) {
+            System.out.print("Enter in 4 digit number: ");
+            number = scan.next();
+            String num = decryptor.decrypt(number);
+            System.out.print(num);
+        }
+
+    }
+}
+*/

@@ -2,22 +2,27 @@ import java.util.Arrays;
 
 public class Decrypter {
 
-    public void decrypt(String number) {
+    public String decrypt(String number) {
 
-        stringConvert(number);
+        int[] intNumArr = stringConvert(number);
+        int[] numArr = decryptor(intNumArr);
+        String intString = printArr(numArr);
+        return intString;
     }
 
     //Prints the Array
-    public void printArr(int[] numbersArr) {
+    public String printArr(int[] numbersArr) {
         String intString = Arrays.toString(numbersArr);
 
         //Sorry ahead of time for this monstrosity
         intString = intString.replace(",", "").replace("[", "").replace("]", "").replace(" ", "");
-        System.out.println(intString);
+        //System.out.println(intString);
+
+        return intString;
     }
 
     //Converts the String into an int array
-    public void stringConvert(String number){
+    public int[] stringConvert(String number){
         int i;
 
         char[] numArr = number.toCharArray();
@@ -25,11 +30,13 @@ public class Decrypter {
         for(i = 0; i < numArr.length; i++){
             intNumArr[i] = (int)numArr[i] - 48;
         }
-        decryptor(intNumArr);
+        //decryptor(intNumArr);
+
+        return intNumArr;
     }
 
-    //Encrypts the given number
-    public void decryptor(int[] numArr){
+    //Decrypts the given number
+    public int[] decryptor(int[] numArr){
         int i, temp;
 
         //Switches the 1st with 3rd and 2nd with 4th
@@ -43,6 +50,9 @@ public class Decrypter {
                 numArr[i] += 3;
                 numArr[i] %= 10;
         }
-        printArr(numArr);
+        //String intString = printArr(numArr);
+
+        //System.out.print(intString);
+        return numArr;
     }
 }
