@@ -50,7 +50,7 @@ public class Encrypter {
             numArr[i] %= 10; //Mods the number by 10
         }
 
-        //Switches the 1st with 3rd and 2nd with 4th
+        //Switch the 1st with 3rd and 2nd with 4th
         for(i = 0; i < 2; i++){
             temp = numArr[i];
             numArr[i] = numArr[i+2];
