@@ -9,15 +9,17 @@ public class Encrypter {
     }
 
     //Prints the Array
-    public void printArr(int[] numbersArr) {
+    public String arrString(int[] numbersArr) {
         String intString = Arrays.toString(numbersArr);
 
         //Sorry ahead of time for this monstrosity
         intString = intString.replace(",", "").replace("[", "").replace("]", "").replace(" ", "");
-        System.out.println(intString);
+        //System.out.println(intString);
         /*for(i = 0; i < numbersArr.length; i++){
             System.out.print(numbersArr[i]);
         }*/
+
+        return intString;
     }
 
     //Converts the String into an int array
@@ -50,6 +52,6 @@ public class Encrypter {
             numArr[i] = numArr[i+2];
             numArr[i+2] = temp;
         }
-        printArr(numArr);
+        arrString(numArr);
     }
 }
