@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Descripter {
+public class Decrypter {
 
     public void decrypt(String number) {
 
