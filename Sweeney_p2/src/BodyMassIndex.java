@@ -3,7 +3,6 @@ public class BodyMassIndex {
     double bmi;
     String category = null;
 
-
     public BodyMassIndex(double height, double weight) {
         bmi = (703 * weight)/(height*height);
         category = bmiCategories(bmi);

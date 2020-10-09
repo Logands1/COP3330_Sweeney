@@ -45,5 +45,4 @@ public class BodyMassIndexTest {
         assertEquals("Underweight", strAnswer);
         assertEquals(13.560956790123457, numAnswer);
     }
-
 }

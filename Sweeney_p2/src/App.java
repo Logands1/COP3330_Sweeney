@@ -35,7 +35,7 @@ public class App {
 
         double height =scan.nextDouble();
 
-        while(height < 0){
+        while(height <= 0){
             System.out.println("Do not enter negative numbers!");
             System.out.print("Enter Height in inches: ");
             height = scan.nextDouble();
@@ -50,7 +50,7 @@ public class App {
 
         double weight = scan.nextDouble();
 
-        while(weight < 0){
+        while(weight <= 0){
             System.out.println("Do not enter negative numbers!");
             System.out.print("Enter Weight in pounds: ");
             weight = scan.nextDouble();
